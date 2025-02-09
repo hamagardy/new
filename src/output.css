@@ -1,0 +1,467 @@
+/* General Reset & Typography */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff; /* Light slate background */
+  color: #1f2937; /* Slate Gray for text */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+/* Navbar Styles */
+nav {
+  background-color: #0a001d;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #4b5563; /* Match the color of your links */
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    background: #0011ff;
+    position: absolute;
+    top: 60px; /* Adjust based on your nav height */
+    left: 0;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Button Styles */
+button,
+.btn {
+  background-color: #2563eb; /* Blue primary */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem; /* Rounded corners */
+  font-size: 0.875rem; /* Small font */
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #1e40af; /* Darker blue on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled,
+.btn:disabled {
+  background-color: #94a3b8; /* Disabled gray */
+  cursor: not-allowed;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb; /* Light border */
+}
+
+th {
+  font-weight: 600;
+  color: #374151; /* Darker text */
+  background-color: #f3f4f6; /* Light gray header */
+}
+
+tr:hover {
+  background-color: #f9fafb; /* Light hover */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9fafb; /* Zebra stripe */
+}
+
+/* Input & Form Styles */
+input,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: #374151;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb; /* Blue border */
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2); /* Blue focus ring */
+}
+
+input::placeholder {
+  color: #9ca3af; /* Gray placeholder */
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  color: white;
+  background-color: #10b981; /* Green success */
+  border-radius: 0.375rem;
+}
+
+.badge.danger {
+  background-color: #ef4444; /* Red danger */
+}
+
+.badge.warning {
+  background-color: #f59e0b; /* Yellow warning */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #1f2937; /* Dark slate */
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+}
+
+footer a {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Utility Classes */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hidden {
+  display: none !important;
+}
+
+.rounded {
+  border-radius: 0.375rem;
+}
+
+.shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+  body {
+    padding: 0 1rem; /* Add some padding to prevent touch targets being too close to edge */
+  }
+
+  /* Navbar */
+  nav {
+    padding: 0.5rem;
+  }
+
+  nav a {
+    display: block; /* Stack links vertically */
+    margin: 0.5rem 0;
+  }
+
+  /* Optional: Implement a hamburger menu for navigation */
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none; /* Hide menu by default */
+  }
+
+  .nav-menu.show {
+    display: block; /* Show menu when toggled */
+  }
+
+  /* Layout Adjustments */
+  .grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+
+  .flex {
+    flex-direction: column; /* Stack flex items vertically */
+  }
+
+  button,
+  .btn {
+    width: 100%; /* Full width buttons for better touch interaction */
+  }
+
+  /* Table Responsiveness */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb; /* Add a border for separation */
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label);
+    font-weight: bold;
+  }
+
+  /* Input and Form */
+  input,
+  select {
+    font-size: 1rem; /* Larger font for touch devices */
+  }
+
+  /* Typography and Spacing */
+  body {
+    font-size: 16px; /* Base font size */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-size: calc(1.325rem + 0.9vw); /* Responsive font sizing */
+  }
+
+  /* Utility Classes */
+  .text-center {
+    text-align: left; /* Left align might be better for readability on narrow screens */
+  }
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px; /* Default width */
+  background-color: #2563eb; /* Sidebar background */
+  color: white;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.sidebar.closed {
+  width: 60px; /* Collapsed width */
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Toggle Button Styles */
+.sidebar-toggle {
+  position: absolute;
+  top: 1rem; /* Fixed position relative to the sidebar */
+  right: -50px; /* Always outside the sidebar */
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  background-color: #374151;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Adjust sidebar width for smaller screens */
+  }
+
+  .sidebar.closed {
+    width: 60px; /* Keep the collapsed width consistent */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 150px; /* Adjust sidebar width for mobile */
+  }
+
+  .sidebar.closed {
+    width: 60px; /* Consistent collapsed width */
+  }
+}
+
+.sidebar-menu li {
+  padding: 0.75rem 1rem;
+}
+
+.sidebar-menu li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-menu li a:hover {
+  background-color: #374151;
+}
+
+.sidebar-menu li a svg {
+  margin-right: 1rem;
+}
+
+.sidebar.closed .sidebar-menu li a span {
+  display: none;
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 250px; /* Match sidebar width */
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.closed ~ .main-content {
+  margin-left: 60px; /* Match collapsed sidebar width */
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar.open {
+    width: 200px;
+  }
+
+  .sidebar-toggle {
+    right: -35px;
+    font-size: 0.8rem;
+  }
+
+  .main-content {
+    margin-left: 60px;
+  }
+
+  .sidebar.open ~ .main-content {
+    margin-left: 20px;
+  }
+}
